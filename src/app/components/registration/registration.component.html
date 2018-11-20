@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+          <form [formGroup]="registrForm" #formDir="ngForm" (submit)="SubRegistr(registrForm)">
+              <!-- Email address -->
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" formControlName="email" required>
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                <!-- Error messages -->
+                <span class="text-danger" *ngIf="registrForm.get('email').touched && registrForm.get('email').hasError('required')">E-mail is required</span>
+                <span class="text-danger" *ngIf="registrForm.get('email').touched && registrForm.get('email').hasError('email')">Not a valid email</span>
+              </div>
+              <!-- First Name -->
+              <div class="form-group">
+                <label for="InputFirstName">First Name</label>
+                <input type="text" class="form-control" id="InputFirstName"placeholder="Enter first name" formControlName="first_name" required>
+                <!-- Error messages -->
+                <span class="text-danger" *ngIf="registrForm.get('first_name').touched && registrForm.get('first_name').hasError('required')">First Name is required</span>
+              </div>
+              <!-- Last Name -->
+              <div class="form-group">
+                <label for="InputLastName">Last Name</label>
+                <input type="text" class="form-control" id="InputLastName"placeholder="Enter last name" formControlName="last_name" required>
+                <!-- Error messages -->
+                <span class="text-danger" *ngIf="registrForm.get('last_name').touched && registrForm.get('last_name').hasError('required')">Last Name is required</span>
+              </div>
+              <!-- Password -->
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" formControlName="password" required>
+                <!-- Error message -->
+                <span class="text-danger" *ngIf="registrForm.get('password').touched && registrForm.get('password').hasError('required')">Password is required</span>
+              </div>
+              <div class="reg-login text-right">
+                  <a routerLink="/login" class="mr-2">Sign in</a>
+                  <button type="submit" class="btn btn-primary">Sign up</button>
+              </div>  
+            </form>
+      </div>
+    </div>
+  </div>
+  

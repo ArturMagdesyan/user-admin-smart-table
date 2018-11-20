@@ -1,0 +1,25 @@
+<div id="admin-login" class="text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 offset-md-4">
+        <form class="form-signin mt-5" [formGroup]="adminLoginForm" #formDir="ngForm" (submit)="SubLogin(adminLoginForm)">
+          <img class="mb-3" src="https://www.logolynx.com/images/logolynx/23/23938578fb8d88c02bc59906d12230f3.png" alt="" width="150">
+          <!-- Email -->
+          <label for="inputEmail" class="sr-only">Email address</label>
+          <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" formControlName="email" required>
+          <!-- Error messages -->
+          <p class="text-danger text-left" *ngIf="adminLoginForm.get('email').touched && adminLoginForm.get('email').hasError('required')">E-mail is required</p>
+          <p class="text-danger text-left" *ngIf="adminLoginForm.get('email').touched && adminLoginForm.get('email').hasError('email')">Not a valid email</p>
+          <!-- Password -->
+          <label for="inputPassword" class="sr-only">Password</label>
+          <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" formControlName="password" required>
+          <!-- Error message -->
+          <p class="text-danger text-left" *ngIf="adminLoginForm.get('password').touched && adminLoginForm.get('password').hasError('required')">Password is required</p>
+          <!-- Sign in button -->
+          <button class="btn btn-lg btn-primary btn-block mt-3" type="submit">Sign in</button>
+          <p class="mt-5 mb-3 text-muted">© 2017-2018</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

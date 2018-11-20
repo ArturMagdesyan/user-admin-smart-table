@@ -1,0 +1,26 @@
+<ul class="nav">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Profile</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#">Link</a>
+  </li>
+  <li class="nav-item ml-auto">
+    <a class="nav-link" href="#" (click)=logOut($event)>Log Out</a>
+  </li>
+</ul>
+<div class="container">
+  <div class="card mx-auto mt-4" style="width: 18rem;">
+    <img class="card-img-top"  alt="Card image cap" src='{{ currentUser.avatar }}'>
+    <div class="card-body">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ currentUser.first_name }}</li>
+        <li class="list-group-item">{{ currentUser.last_name }}</li>
+        <li class="list-group-item">{{ currentUser.email }}</li>
+      </ul>
+    </div>
+  </div>
+</div>
